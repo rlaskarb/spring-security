@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Spring-Security-session</h1>
+    <div sec:authorize="hasAnyAuthority('ADMIN')">
+        <p>ADMIN 권한을 가진 사람만 볼수 있는 영역</p>
+    </div>
+    <div sec:authorize="hasAnyAuthority('USER')">
+        <p>USER 권한을 가진 사람만 볼수 있는 영역</p>
+    </div>
+    <div>
+        <h1>로그인 기능</h1>
+        <a href="/auth/login">로그인</a>
+        <a href="/user/signup">회원가입</a>
+        <form action="/auth/logout">
+            <button>로그아웃하아기</button>
+        </form>
+    </div>
+    <hr>
+    <a href="/admin/page">관리자 전용 페이지</a>
+    <a href="/user/page">일반유저 전용 페이지</a>
+</body>
+</html>
